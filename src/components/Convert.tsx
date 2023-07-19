@@ -22,7 +22,10 @@ const Convert = () => {
           backgroundColor: theme.palette.secondary.main,
           color: "white",
           textTransform: "none",
-          marginTop: '50px'
+          marginTop: '50px',
+          '&:hover': {
+            backgroundColor: theme.palette.secondary.dark
+          }
         }}
       >
         <Typography variant="body1" color="white">
