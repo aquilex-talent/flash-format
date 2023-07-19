@@ -2,11 +2,31 @@ import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   typography: {
-    fontFamily: 'Poppins'
+    fontFamily: "Open Sans",
+    h1: {
+      fontWeight: "bold",
+      fontSize: 64,
+    },
+    h2: {
+      fontWeight: "bold",
+      fontSize: 52,
+    },
+    h3: {
+      fontWeight: "normal",
+      fontSize: 40,
+    },
+    body1: {
+      fontWeight: "normal",
+      fontSize: 24,
+    },
+    caption: {
+      fontWeight: "lighter",
+      fontSize: 16,
+    },
   },
   palette: {
     background: {
-      default: "#512B7C",
+      default: "#744FA4",
     },
     primary: {
       light: "#744FA4",
