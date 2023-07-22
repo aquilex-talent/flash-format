@@ -7,44 +7,52 @@ const Convert = () => {
   const theme = useTheme();
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
-  console.log({ selectedFile })
+  console.log({ selectedFile });
   const inputRef = useRef<HTMLInputElement>(null);
   const onFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.item(0);
     if (file) {
-      console.log("here")
+      console.log("here");
       poop(file);
     }
-  };
-
-  const onFileUpload = () => {
-    if (!selectedFile) {
-      return;
-    }
-    const formData = new FormData();
-    formData.append(selectedFile.name, selectedFile);
-
-    axios.post(
-      "http://127.0.0.1:5001/flash-format/us-central1/convertImage",
-      formData
-    );
   };
 
   const poop = async (f: File) => {
     const formData = new FormData();
     formData.append(f.name, f);
+    formData.append("toFormat", "png");
 
     try {
-      console.log("sending file")
-      await axios.post(
-        "http://127.0.0.1:5001/flash-format/us-central1/convertImage",
-        formData
+      console.log("sending file");
+      const response = await axios.post(
+        "http://127.0.0.1:5001/flash-format/us-central1/format",
+        formData,
+        {
+          headers: {
+            "Content-Type": "image/jpeg",
+          },
+          responseType: "blob",
+        }
       );
       console.log("SUCCESS");
-    } catch(error) {
-      console.log('error: ', error);
+      console.log(response.data);
+      console.log("poop");
+      const href = URL.createObjectURL(response.data);
+
+      // create "a" HTML element with href to file & click
+      const link = document.createElement("a");
+      link.href = href;
+      link.setAttribute("download", "file.png"); //or any other extension
+      document.body.appendChild(link);
+      link.click();
+
+      // clean up "a" element & remove ObjectURL
+      document.body.removeChild(link);
+      URL.revokeObjectURL(href);
+    } catch (error) {
+      console.log("error: ", error);
     }
-  }
+  };
   return (
     <Box
       display="flex"
