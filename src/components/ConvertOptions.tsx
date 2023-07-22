@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback } from "react";
 
 import {
   Box,
@@ -7,27 +7,25 @@ import {
   Select,
   SelectChangeEvent,
   Typography,
-  makeStyles,
   useTheme,
 } from "@mui/material";
 
-const formats = [
-  "jpeg",
-  "png",
-  "webp",
-  "gif",
-  "jp2",
-  "tiff",
-  "avif",
-  "heif",
-  "jxl",
-];
+interface ConvertOptionsProps {
+  formats: string[];
+  toFormat: string; 
+  fromFormat: string; 
+  setToFormat: (toFormat: string) => void;
+  setFromFormat: (fromFormat: string) => void;
+}
 
-const ConvertOptions = () => {
+const ConvertOptions = ({
+  formats,
+  toFormat,
+  fromFormat,
+  setToFormat,
+  setFromFormat
+}: ConvertOptionsProps) => {
   const theme = useTheme();
-
-  const [fromFormat, setFromFormat] = useState<string>(formats[0]);
-  const [toFormat, setToFormat] = useState<string>(formats[1]);
 
   const handleFromFormatSelection = useCallback(
     (e: SelectChangeEvent<string>) => {
