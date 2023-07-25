@@ -43,7 +43,7 @@ const ConvertOptions = ({
 
   return (
     <Box display="flex" sx={{  width: 'fit-content'}}>
-      <Typography variant="body1" color="white" marginRight="8px">
+      <Typography variant="body2" color="white" marginRight="8px">
         Convert
       </Typography>
       <FormControl style={{ marginRight: "8px" }}>
@@ -81,7 +81,7 @@ const ConvertOptions = ({
           ))}
         </Select>
       </FormControl>
-      <Typography variant="body1" color="white" marginRight="8px">
+      <Typography variant="body2" color="white" marginRight="8px">
         To
       </Typography>
       <FormControl>

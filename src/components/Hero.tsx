@@ -20,7 +20,7 @@ const Hero = () => {
         display="flex"
         flexDirection="column"
         justifyContent="center"
-        sx={{ width: '90%'}}
+        sx={{ width: "90%" }}
       >
         <Box
           display="flex"
@@ -28,14 +28,7 @@ const Hero = () => {
           alignItems="center"
           marginTop="40px"
         >
-          <OfflineBoltOutlinedIcon
-            style={{
-              color: "white",
-              width: "60px",
-              height: "60px",
-              marginRight: 8,
-            }}
-          />
+          <OfflineBoltOutlinedIcon className="flash-icon" />
           <Typography
             variant="h1"
             color="white"

@@ -41,6 +41,10 @@ const theme = createTheme({
         fontSize: 24,
       },
     },
+    body2: {
+      fontWeight: "normal",
+      fontSize: 24
+    },
     caption: {
       fontWeight: "lighter",
       fontSize: 16,
