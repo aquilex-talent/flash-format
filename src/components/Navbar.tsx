@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Box, Typography, useTheme } from "@mui/material";
-import OfflineBoltOutlinedIcon from '@mui/icons-material/OfflineBoltOutlined';
+import OfflineBoltOutlinedIcon from "@mui/icons-material/OfflineBoltOutlined";
 
 const Navbar = () => {
   const theme = useTheme();
@@ -10,8 +10,14 @@ const Navbar = () => {
       className="navbar"
       style={{ backgroundColor: theme.palette.primary.dark }}
     >
-      <OfflineBoltOutlinedIcon style={{ color: 'white', width: '40px', height: '40px', marginRight: 8 }} />
-      <Typography fontSize={40} fontStyle="italic" component="span" color="white" marginRight="8px">
+      <OfflineBoltOutlinedIcon className="flash-icon-navbar" />
+      <Typography
+        fontSize={40}
+        fontStyle="italic"
+        component="span"
+        color="white"
+        marginRight="8px"
+      >
         Flash
       </Typography>
       <Typography fontSize={40} component="span" color="white">

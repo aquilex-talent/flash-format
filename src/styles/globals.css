@@ -27,6 +27,64 @@
   color: white !important;
 }
 
+.flash-icon {
+  color: white;
+  margin-right: 8px;
+}
+
+.flash-icon-navbar {
+  color: white;
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 599px) {
+  .flash-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .flash-icon-navbar {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 899px) {
+  .flash-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .flash-icon-navbar {
+    width: 27px;
+    height: 27px;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+  .flash-icon {
+    width: 74px;
+    height: 74px;
+  }
+
+  .flash-icon-navbar {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .flash-icon {
+    width: 84px;
+    height: 84px;
+  }
+
+  .flash-icon-navbar {
+    width: 36px;
+    height: 36px;
+  }
+}
+
 /**
 sx={{
         width: "100vw",

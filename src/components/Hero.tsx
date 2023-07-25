@@ -16,41 +16,47 @@ const Hero = () => {
         backgroundColor: theme.palette.primary.main,
       }}
     >
-      <Box display="flex" alignItems="center" marginTop="40px">
-        <OfflineBoltOutlinedIcon
-          style={{
-            color: "white",
-            width: "60px",
-            height: "60px",
-            marginRight: 8,
-          }}
-        />
-        <Typography
-          variant="h1"
-          color="white"
-          fontStyle="italic"
-          component="span"
-          marginRight="8px"
+      <Box
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+        sx={{ width: "90%" }}
+      >
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          marginTop="40px"
         >
-          Flash
-        </Typography>
+          <OfflineBoltOutlinedIcon className="flash-icon" />
+          <Typography
+            variant="h1"
+            color="white"
+            fontStyle="italic"
+            component="span"
+            marginRight="8px"
+          >
+            Flash
+          </Typography>
+          <Typography
+            variant="h1"
+            color="white"
+            fontStyle="normal"
+            component="span"
+          >
+            Format
+          </Typography>
+        </Box>
         <Typography
-          variant="h1"
+          variant="body1"
           color="white"
-          fontStyle="normal"
-          component="span"
+          marginTop="20px"
+          marginBottom="40px"
+          textAlign="center"
         >
-          Format
+          Convert Your Image Into the Format You Need In a Flash!
         </Typography>
       </Box>
-      <Typography
-        variant="body1"
-        color="white"
-        marginTop="20px"
-        marginBottom="40px"
-      >
-        Convert Your Image Into the Format You Need In a Flash!
-      </Typography>
     </Box>
   );
 };

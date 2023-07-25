@@ -5,6 +5,8 @@ import Hero from "@/components/Hero";
 import Content from "@/components/Content";
 import ConvertOptions from "@/components/ConvertOptions";
 import Convert from "@/components/Convert";
+import Footer from "@/components/Footer";
+import { Box } from "@mui/material";
 
 export default function Home() {
   return (
@@ -16,11 +18,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Navbar />
-        <Content>
-          <Hero />
-          <Convert />
-        </Content>
+        <Box display="flex" flexDirection="column" height="100vh">
+          <Navbar />
+          <Content>
+            <Hero />
+            <Convert />
+          </Content>
+          <Footer />
+        </Box>
       </main>
     </>
   );

@@ -5,7 +5,18 @@ const theme = createTheme({
     fontFamily: "Open Sans",
     h1: {
       fontWeight: "bold",
-      fontSize: 64,
+      '@media (max-width: 599px)': {
+        fontSize: 32,
+      },
+      '@media (min-width: 600px) and (max-width: 899px)': {
+        fontSize: 48,
+      },
+      '@media (min-width: 900px) and (max-width: 1199px)': {
+        fontSize: 64,
+      },
+      '@media (min-width: 1200px)': {
+        fontSize: 72,
+      },
     },
     h2: {
       fontWeight: "bold",
@@ -17,7 +28,22 @@ const theme = createTheme({
     },
     body1: {
       fontWeight: "normal",
-      fontSize: 24,
+      '@media (max-width: 599px)': {
+        fontSize: 14,
+      },
+      '@media (min-width: 600px) and (max-width: 899px)': {
+        fontSize: 18,
+      },
+      '@media (min-width: 900px) and (max-width: 1199px)': {
+        fontSize: 20,
+      },
+      '@media (min-width: 1200px)': {
+        fontSize: 24,
+      },
+    },
+    body2: {
+      fontWeight: "normal",
+      fontSize: 24
     },
     caption: {
       fontWeight: "lighter",
