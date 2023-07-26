@@ -69,7 +69,9 @@ const Convert = () => {
       // create "a" HTML element with href to file & click
       const link = document.createElement("a");
       link.href = href;
-      link.setAttribute("download", `${f.name.split(".")[0]}.${toFormat}`); //or any other extension
+
+      //or any other extension
+      link.setAttribute("download", `${f.name.split(".")[0]}.${toFormat}`);
       document.body.appendChild(link);
       link.click();
 
