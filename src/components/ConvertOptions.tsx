@@ -12,8 +12,8 @@ import {
 
 interface ConvertOptionsProps {
   formats: string[];
-  toFormat: string; 
-  fromFormat: string; 
+  toFormat: string;
+  fromFormat: string;
   setToFormat: (toFormat: string) => void;
   setFromFormat: (fromFormat: string) => void;
 }
@@ -23,7 +23,7 @@ const ConvertOptions = ({
   toFormat,
   fromFormat,
   setToFormat,
-  setFromFormat
+  setFromFormat,
 }: ConvertOptionsProps) => {
   const theme = useTheme();
 
@@ -42,7 +42,7 @@ const ConvertOptions = ({
   );
 
   return (
-    <Box display="flex" sx={{  width: 'fit-content'}}>
+    <Box display="flex" sx={{ width: "fit-content" }}>
       <Typography variant="body2" color="white" marginRight="8px">
         Convert
       </Typography>

@@ -1,12 +1,12 @@
 import Head from "next/head";
 
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Content from "@/components/Content";
-import ConvertOptions from "@/components/ConvertOptions";
-import Convert from "@/components/Convert";
-import Footer from "@/components/Footer";
 import { Box } from "@mui/material";
+
+import Hero from "@/components/Hero";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Content from "@/components/Content";
+import Convert from "@/components/Convert";
 
 export default function Home() {
   return (

@@ -1,5 +1,6 @@
-import { Box, Typography, useTheme } from "@mui/material";
 import React from "react";
+
+import { Box, Typography, useTheme } from "@mui/material";
 
 const Footer = () => {
   const theme = useTheme();

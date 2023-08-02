@@ -8,7 +8,9 @@ const Navbar = () => {
   return (
     <Box
       className="navbar"
-      style={{ backgroundColor: theme.palette.primary.dark }}
+      style={{
+        backgroundColor: theme.palette.primary.dark,
+      }}
     >
       <OfflineBoltOutlinedIcon className="flash-icon-navbar" />
       <Typography

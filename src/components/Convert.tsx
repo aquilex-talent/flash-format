@@ -1,3 +1,6 @@
+import React, { useRef, useState } from "react";
+import axios from "axios";
+
 import {
   Box,
   Button,
@@ -6,9 +9,8 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import React, { useRef, useState } from "react";
+
 import ConvertOptions from "./ConvertOptions";
-import axios from "axios";
 
 const formats = [
   "jpeg",
@@ -25,20 +27,19 @@ const formats = [
 const Convert = () => {
   const theme = useTheme();
 
-  const [fromFormat, setFromFormat] = useState<string>(formats[0]);
-  const [toFormat, setToFormat] = useState<string>(formats[1]);
   const [loading, setLoading] = useState<boolean>(false);
+  const [toFormat, setToFormat] = useState<string>(formats[1]);
+  const [fromFormat, setFromFormat] = useState<string>(formats[0]);
 
   const inputRef = useRef<HTMLInputElement>(null);
   const onFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.item(0);
     if (file) {
-      console.log("here");
-      poop(file);
+      processFile(file);
     }
   };
 
-  const poop = async (f: File) => {
+  const processFile = async (f: File) => {
     setLoading(true);
     const formData = new FormData();
     formData.append(f.name, f);
@@ -53,7 +54,6 @@ const Convert = () => {
         : "http://127.0.0.1:5001/flash-format/us-central1/format";
 
     try {
-      console.log("sending file");
       const response = await axios.post(cloudFunctionURL, formData, {
         headers: {
           "Content-Type": `image/${fromFormat}`,
@@ -61,21 +61,13 @@ const Convert = () => {
         },
         responseType: "blob",
       });
-      console.log("SUCCESS");
-      console.log(response.data);
-      console.log("poop");
-      const href = URL.createObjectURL(response.data);
 
-      // create "a" HTML element with href to file & click
+      const href = URL.createObjectURL(response.data);
       const link = document.createElement("a");
       link.href = href;
-
-      //or any other extension
       link.setAttribute("download", `${f.name.split(".")[0]}.${toFormat}`);
       document.body.appendChild(link);
       link.click();
-
-      // clean up "a" element & remove ObjectURL
       document.body.removeChild(link);
       URL.revokeObjectURL(href);
 
