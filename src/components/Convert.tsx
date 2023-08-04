@@ -137,7 +137,7 @@ const ConvertUI = ({
       />
       <input
         type="file"
-        accept="image/jpeg"
+        accept={`image/${toFormat}`}
         ref={inputRef}
         onChange={onFileChange}
         style={{ display: "none" }}
