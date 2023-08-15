@@ -45,7 +45,7 @@ const Convert = () => {
     formData.append(f.name, f);
     formData.append("toFormat", toFormat);
 
-    const NODE_ENV = process.env.NODE_ENV || "production";
+    const NODE_ENV = process.env.NEXT_PUBLIC_NODE_ENV || "production";
     console.log({ NODE_ENV });
 
     const cloudFunctionURL =
@@ -137,7 +137,7 @@ const ConvertUI = ({
       />
       <input
         type="file"
-        accept={`image/${toFormat}`}
+        accept={`image/${fromFormat}`}
         ref={inputRef}
         onChange={onFileChange}
         style={{ display: "none" }}
